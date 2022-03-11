@@ -105,6 +105,7 @@ func UpdateAssignment(w http.ResponseWriter, r *http.Request) {
 	
 	var response Response
 	response.Assignments = Assignments
+	w.Write(jsonResponse)
 
 
 

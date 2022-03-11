@@ -23,6 +23,14 @@ func main() {
 	if err != nil {
 		log.Panicln(err)
 	}
+	
+	portKey := os.Getenv("SHODAN_PORT_KEY")
+	s := shodan.New(portKey)
+	info, err := s.PortInfo()
+	if err != nil {
+		log.Panicln(err)
+	}
+	
 	fmt.Printf(
 		"Query Credits: %d\nScan Credits:  %d\n\n",
 		info.QueryCredits,
